@@ -1,0 +1,6 @@
+main: com.jimune.perks.Perks
+name: ${project.name}
+author: AquaXV
+version: ${project.version}
+commands:
+    perk:
