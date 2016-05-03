@@ -50,12 +50,14 @@ public class PerkList {
             p.setGliding(false);
         } else {
             if (!p.isGliding()) {
-                p.sendMessage(ChatColor.BLUE + "You are now gliding the winds!");
-                p.setFlying(false);
+                if (p.isFlying()) p.setFlying(false);
                 p.setGliding(true);
                 PlayerListener.gliding.add(p.getName());
+
+                p.sendMessage(ChatColor.BLUE + "You are now gliding the winds!");
             } else {
                 p.setGliding(false);
+                PlayerListener.gliding.remove(p.getName());
             }
         }
     }
