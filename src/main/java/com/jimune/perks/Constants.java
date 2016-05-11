@@ -1,7 +1,12 @@
 package com.jimune.perks;
 
-public class Constants {
-
-    public static int TAG_DURATION = 8;
-
+public enum Constants {
+    TAG_DURATION(0);
+    private int constValue;
+    Constants(int constValue) {
+        this.constValue = constValue;
+    }
+    public int getConstValue() {
+        return this.constValue;
+    }
 }

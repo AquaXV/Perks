@@ -68,7 +68,8 @@ public class Manager {
 
         if (p != null) {
             if (PlayerListener.tagged.containsKey(cause.getName()) && !cause.hasPermission("perkmanager.ignorePVPTag")) {
-                if (System.currentTimeMillis() - PlayerListener.tagged.get(cause.getName()) < Constants.TAG_DURATION * 1000) {
+                Constants tagConst = Constants.TAG_DURATION;
+                if (System.currentTimeMillis() - PlayerListener.tagged.get(cause.getName()) < tagConst.ordinal() * 1000) {
                     cause.sendMessage(ChatColor.RED + "This perk can not be used while tagged!");
                     return false;
                 }
